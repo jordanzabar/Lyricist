@@ -15,10 +15,10 @@ import android.widget.Toast;
 public class RegisterActivity extends AppCompatActivity {
 
 
-    EditText usernameRegTxt, passwordRegTxt;
+    EditText usernameRegTxt, passwordRegTxt, emailRegTxt;
     Button submitRegBtn;
     Context context = this;
-    LoginDataBaseAdapter loginDataBaseAdapter;
+
 
 
 
@@ -30,6 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         final EditText usernameRegTxt = (EditText) findViewById(R.id.usernameRegTxt);
         final EditText passwordRegTxt = (EditText) findViewById(R.id.passwordRegTxt);
+        final EditText emailRegTxt = (EditText) findViewById(R.id.emailRegTxt);
         final Button submitRegBtn = (Button) findViewById(R.id.submitRegBtn);
 
         submitRegBtn.setOnClickListener(new View.OnClickListener() {
@@ -38,32 +39,38 @@ public class RegisterActivity extends AppCompatActivity {
 
                 String userName = usernameRegTxt.getText().toString();
                 String password = passwordRegTxt.getText().toString();
+                String email = emailRegTxt.getText().toString();
 
-                if(userName.equals("")|| password.equals(""))
+                if(userName.equals(""))
                 {
-                    Toast.makeText(getApplicationContext(),"Field Vaccant",
+                    Toast.makeText(getApplicationContext(),"User Name is vacant",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(password.equals(""))
+                {
+                    Toast.makeText(getApplicationContext(),"Password is vacant",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(email.equals(""))
+                {
+                    Toast.makeText(getApplicationContext(),"Email is vacant",
                             Toast.LENGTH_LONG).show();
                     return;
                 }
                 else
                 {
-//                    loginDataBaseAdapter.insertEntry(userName, password);
+
                     Toast.makeText(getApplicationContext(),
                             "Account Created", Toast.LENGTH_LONG).show();
                     Intent i = new Intent(RegisterActivity.this,
                             MainActivity.class);
                     startActivity(i);
-//                    finish();
+
                 }
             }
         });
     }
 
-    @Override
-    protected void onDestroy()
-    {
-       super.onDestroy();
-
-        loginDataBaseAdapter.close();
-    }
 }

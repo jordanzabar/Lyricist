@@ -10,9 +10,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-    LoginDataBaseAdapter loginDataBaseAdapter;
-
-
 
     EditText userNameTxt, passwordTxt;
     Button signInBtn;
@@ -22,10 +19,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-//        loginDataBaseAdapter = new LoginDataBaseAdapter(this);
-//        loginDataBaseAdapter = loginDataBaseAdapter.open();
-
 
         final EditText userNameTxt = (EditText) findViewById(R.id.userNameTxt);
         final EditText passwordTxt = (EditText) findViewById(R.id.passwordTxt);
@@ -70,9 +63,5 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
-//        loginDataBaseAdapter.close();
-//    }
+
 }

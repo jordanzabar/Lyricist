@@ -11,6 +11,6 @@
         android:layout_width="193dp"
         android:layout_height="263dp"
         app:srcCompat="@android:drawable/btn_star_big_on"
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="81dp" />
+        tools:layout_editor_absoluteX="185dp"
+        tools:layout_editor_absoluteY="12dp" />
 </android.support.constraint.ConstraintLayout>
