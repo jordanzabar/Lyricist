@@ -1,5 +1,6 @@
 package com.example.jzabar7531.lyricist;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends Activity {
 
 
     EditText usernameRegTxt, passwordRegTxt, emailRegTxt;
